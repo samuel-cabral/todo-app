@@ -16,7 +16,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@rocketseat/eslint-config": "^2.2.2",
     "@types/react": "~18.3.12",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "typescript": "^5.3.3"
   },
   "private": true,
