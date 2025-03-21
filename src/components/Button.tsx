@@ -14,10 +14,10 @@ export function Button({ variant, onPress }: ButtonProps) {
   const isCreate = variant === 'create'
   const icon = isCreate ? (
     <View style={styles.circleIcon}>
-      <Plus size={16} weight="bold" color={theme.colors['gray-100']} />
+      <Plus size={18} weight="bold" color={theme.colors['gray-100']} />
     </View>
   ) : (
-    <Trash size={14} weight="bold" color={theme.colors['gray-300']} />
+    <Trash size={18} weight="bold" color={theme.colors['gray-300']} />
   )
 
   return (
