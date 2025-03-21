@@ -1,5 +1,5 @@
 import { Plus, Trash } from 'phosphor-react-native'
-import { Pressable, StyleSheet } from 'react-native'
+import { Pressable, StyleSheet, View } from 'react-native'
 
 import { theme } from '../theme'
 
@@ -13,7 +13,9 @@ interface ButtonProps {
 export function Button({ variant, onPress }: ButtonProps) {
   const isCreate = variant === 'create'
   const icon = isCreate ? (
-    <Plus size={16} weight="bold" color={theme.colors['gray-100']} />
+    <View style={styles.circleIcon}>
+      <Plus size={16} weight="bold" color={theme.colors['gray-100']} />
+    </View>
   ) : (
     <Trash size={14} weight="bold" color={theme.colors['gray-300']} />
   )
@@ -35,8 +37,8 @@ export function Button({ variant, onPress }: ButtonProps) {
 
 const styles = StyleSheet.create({
   button: {
-    width: 42,
-    height: 42,
+    width: 54,
+    height: 54,
     borderRadius: 6,
     alignItems: 'center',
     justifyContent: 'center',
@@ -52,5 +54,14 @@ const styles = StyleSheet.create({
   },
   deleteButtonHover: {
     backgroundColor: theme.colors['gray-400'],
+  },
+  circleIcon: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: theme.colors['gray-100'],
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 })

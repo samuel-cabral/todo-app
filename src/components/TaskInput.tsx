@@ -27,11 +27,13 @@ export function TaskInput({ onAddTask }: TaskInputProps) {
 
   return (
     <View style={styles.container}>
-      <Input
-        filled={isFilled}
-        value={description}
-        onChangeText={handleChange}
-      />
+      <View style={styles.inputContainer}>
+        <Input
+          filled={isFilled}
+          value={description}
+          onChangeText={handleChange}
+        />
+      </View>
       <Button variant="create" onPress={handleAddTask} />
     </View>
   )
@@ -42,5 +44,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
+  },
+  inputContainer: {
+    flex: 1,
   },
 })

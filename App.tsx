@@ -4,8 +4,11 @@ import {
   useFonts,
 } from '@expo-google-fonts/inter'
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 
+import { TasksProvider } from './src/contexts/TasksContext'
+import { Home } from './src/screens/Home'
 import { theme } from './src/theme'
 
 export default function App() {
@@ -15,14 +18,20 @@ export default function App() {
   })
 
   if (!fontsLoaded) {
-    return null
+    return (
+      <View style={styles.loadingContainer}>
+        <Text style={styles.loadingText}>Carregando...</Text>
+      </View>
+    )
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Todo App</Text>
-      <StatusBar style="light" />
-    </View>
+    <TasksProvider>
+      <SafeAreaView style={styles.container}>
+        <Home />
+        <StatusBar style="light" />
+      </SafeAreaView>
+    </TasksProvider>
   )
 }
 
@@ -30,12 +39,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: theme.colors['gray-700'],
+  },
+  loadingContainer: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: theme.colors['gray-700'],
   },
-  text: {
-    fontFamily: theme.typography.fontFamily.bold,
-    fontSize: theme.typography.fontSize.lg,
+  loadingText: {
     color: theme.colors['gray-100'],
+    fontSize: 16,
   },
 })
