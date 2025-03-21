@@ -99,11 +99,14 @@ const styles = StyleSheet.create({
   form: {
     paddingHorizontal: 24,
     marginTop: -26,
+    zIndex: 10,
   },
   content: {
     flex: 1,
     paddingHorizontal: 24,
     paddingTop: 32,
+    backgroundColor: theme.colors['gray-600'],
+    marginTop: -18,
   },
   tasksList: {
     marginTop: 20,

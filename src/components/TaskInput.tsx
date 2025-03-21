@@ -32,6 +32,7 @@ export function TaskInput({ onAddTask }: TaskInputProps) {
           filled={isFilled}
           value={description}
           onChangeText={handleChange}
+          keyboardAppearance="dark"
         />
       </View>
       <Button variant="create" onPress={handleAddTask} />
