@@ -1,5 +1,5 @@
 import { ClipboardText } from 'phosphor-react-native'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Image, StyleSheet, Text, View } from 'react-native'
 
 import { Task, TaskInput } from '../../components'
 import { useTasks } from '../../contexts/TasksContext'
@@ -13,12 +13,14 @@ export function Home() {
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.logoContainer}>
-          <Text style={[styles.logoText, { color: theme.colors.blue }]}>
-            to
-          </Text>
-          <Text style={[styles.logoText, { color: theme.colors.purple }]}>
-            do
-          </Text>
+          <Image
+            alt="Logo"
+            source={require('../../assets/logo.png')}
+            style={{
+              width: 110,
+              height: 32,
+            }}
+          />
         </View>
       </View>
 
